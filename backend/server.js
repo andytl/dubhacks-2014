@@ -25,7 +25,7 @@ app.post('/person', person.create);
 */
 app.get('/person/:id', person.lookup);
 
-
+app.delete('/person/:id', person.remove);
 
 app.listen(3000);
 
