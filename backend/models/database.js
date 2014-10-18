@@ -4,7 +4,7 @@ var config = require('../config.js');
 var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database(config.DB_URL);
 
-exports = db; // no time for fancy db, use this
+exports.db = db; // no time for fancy db, use this
 
 
 

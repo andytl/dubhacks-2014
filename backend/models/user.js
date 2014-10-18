@@ -1,5 +1,5 @@
 
-var db = require('./database.js');
+var db = require('./database.js').db;
 
 
 exports.updatePassword = function(req, res) {
@@ -8,11 +8,11 @@ exports.updatePassword = function(req, res) {
 exports.create = function(req, res) {
   res.send("created a user");
 
-  var query = "insert into user (username, password, phone) values (";
-  body += req.body.username + ", " + req.body.password + ", " + req.body.phone + ")";
+  var query = "insert into user (username, password, phone) values ('";
+  query += req.body.username + "', '" + req.body.password + "', '" + req.body.phone + "')";
 
   console.log(query);
-  //db.run(query);
+  db.run(query);
 
 }
 
