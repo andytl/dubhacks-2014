@@ -13,6 +13,7 @@ create table goal (
 
 create table subgoal (
   id integer primary key autoincrement,
+  uid integer references user,
   gid integer references goal,
   text varchar(250),
   active char(1),
