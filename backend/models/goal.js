@@ -1,16 +1,5 @@
 var db = require("./database").db;
 
-// app.get('/goal', goal.list);
-
-// app.get('/goal/:id', goal.lookup);
-
-// app.post('/goal', goal.create);
-
-// app.put('/goal/:id', goal.update);
-
-// app.delete('/goal/:id', goal.remove);
-
-
 exports.create = function(req, res) {
   var checkIfExists = "select count(*) as num from user where id = '" + req.params.uid + "';";
   db.get(checkIfExists, function(err, row) {
