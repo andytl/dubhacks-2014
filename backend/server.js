@@ -6,6 +6,9 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Load config
+var config = require('./config.js');
+
 // Load the models
 var user = require('./models/user.js');
 var goal = require('./models/goal.js');
@@ -50,7 +53,7 @@ app.put('/goal/:gid/subgoal/:id', subgoal.update);
 app.delete('/goal/:gid/subgoal/:id', subgoal.remove);
 
 
-app.listen(3000);
+app.listen(config.PORT);
 
 
 
