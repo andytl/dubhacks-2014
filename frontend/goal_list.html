@@ -6,16 +6,15 @@
 	<title>My Goals</title>
 </head>
 <body>
-	<h1>My Goals:</h1>
+	<h1 id="user"></h1>
+	<h2>My Goals:</h2>
 	<div id="goals">
 		<ul id="goal_list"></ul>
 	</div>
-	<form action="server/backend/something" method="post" id="add_form">
-		<div id="add_goal">
-			New Goal:
-			<input type="text" name="new_goal" placeholder="New Goal" id="add_text"/>
-			<input type="submit" value="Add" id="add_button" />
-		</div>
+	<div id="add_goal">
+		New Goal:
+		<input type="text" name="new_goal" placeholder="New Goal" id="add_text"/>
+		<button type="button" value="Add" id="add_button" />
 	</div>
 </body>
 </html>

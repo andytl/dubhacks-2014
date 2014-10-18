@@ -49,9 +49,9 @@ exports.remove = function(req, res) {
   db.get(checkIfExists, function(err, row) {
     if (row.num > 0) {
       db.run(deleteUser);
-      res.send("user deleted");
+      res.json({status: 204, message: "user deleted"});
     } else {
-      res.send("user doesn't exist");
+      res.status(500).json({ status: "error", message: "user doesn't exist"});
     }
   });
 }
