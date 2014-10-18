@@ -1,33 +1,35 @@
-$(document).ready(function() {
-$('a.login-window').click(function() {
-    
-            //Getting the variable's value from a link 
-    var loginBox = $(this).attr('href');
+$(function() {
+    $("#signinForm").submit(signIn);
 
-    //Fade in the Popup
-    $(loginBox).fadeIn(300);
-    
-    //Set the center alignment padding + border see css style
-    var popMargTop = ($(loginBox).height() + 24) / 2; 
-    var popMargLeft = ($(loginBox).width() + 24) / 2; 
-    
-    $(loginBox).css({ 
-        'margin-top' : -popMargTop,
-        'margin-left' : -popMargLeft
-    });
-    
-    // Add the mask to body
-    $('body').append('<div id="mask"></div>');
-    $('#mask').fadeIn(300);
-    
-    return false;
-});
+    function signIn() {
+        var name = $("[name='username']").val();
+        var pw = $("[name='password']").val();
+        var url = "localhost:3000/user/";
+        var data = '"username":' + "\""+name + "\"," + '"password":' + "\""+pw + "\"";
+        var obj = jQuery.parseJSON("{" + data + "}");
+        $.ajax({
+            type: "GET",
+            url: url,
+            data: obj,
+            error: function(error) {
+                    handleError(error);
+                },
+            success: function(result){
+                onSuccess(result);
+            },
+            dataType: "JSON"
+        });
+    }
 
-// When clicking on the button close or the mask layer the popup closed
-$('a.close, #mask').live('click', function() { 
-  $('#mask , .login-popup').fadeOut(300 , function() {
-    $('#mask').remove();  
-}); 
-return false;
-});
+
+    function handleError(error) {
+        alert("error: " + error.status);
+    }
+
+    function onSuccess(result) {
+        $.cookie("userID", result);
+        $.cookie("[name='username']").val();
+        alert("cookies are set!(yum!)");
+    }
+
 });
