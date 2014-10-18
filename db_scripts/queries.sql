@@ -4,6 +4,8 @@ insert into user (username, password, phone) values (req.param('username'), req.
 -- Log into user
 select id from user where username = req.param('username') and password = req.param('password');
 
+-- Update password
+update user set password = req.param('new_password') where username = req.param('username') and password = req.param('old_password');
 
 
 
@@ -21,6 +23,8 @@ insert into goal (uid, text) values (req.param('uid'), req.param('text'));
 -- remove subgoals first?
 delete from goal where uid = req.param('uid') and id = req.param('id');
 
+-- Update goal text
+update goal set text = req.param('new_text') where uid = req.param('uid') and id = req.param('id');
 
 
 
@@ -39,3 +43,15 @@ insert into subgoal (uid, gid, text, active, points, timeToSend) values (req.par
 
 -- Remove specific subgoal
 delete from subgoal where uid = req.param('uid') and id = req.param('id');
+
+-- Update subgoal text
+update subgoal set text = req.param('new_text') where uid = req.param('uid') and id = req.param('id');
+
+-- Update subgoal to active or inactive
+update subgoal set active = req.param('new_active') where uid = req.param('uid') and id = req.param('id');
+
+-- Update subgoal points
+update subgoal set points = req.param('new_points') where uid = req.param('uid') and id = req.param('id');
+
+-- Update subgoal timeToSend
+update subgoal set timeToSend = req.param('new_timeToSend') where uid = req.param('uid') and id = req.param('id');
