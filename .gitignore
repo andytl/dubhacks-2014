@@ -1,2 +1,12 @@
+### General stuff
+*.swp
+
+
 # The database that will store all of our data, SQLite for now.
 database
+
+### Backend stuff
+
+# NPM dependencies
+node_modules/
+
