@@ -25,6 +25,7 @@ app.post('/person', person.create);
 */
 app.get('/person/:id', person.lookup);
 
+app.delete('/person/:id', person.remove);
 /*
 
 */
@@ -40,6 +41,7 @@ app.post('/goal', goal.create);
 */
 app.get('/goal/:id', goal.lookup);
 
+>>>>>>> 9f39d7dc65b875127e0a8837d91ceb7cea0c433d
 
 app.listen(3000);
 
