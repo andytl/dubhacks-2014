@@ -4,19 +4,44 @@
 		<title>Goal Manager</title>
 		<link rel="stylesheet" type="text/css" href="goal_manager.css">
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Droid+Sans">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script type="text/javascript" src="login.js"></script>
+		
 	</head>
 
 	<body>
 		<div class="top_bar">
 			<ul>
 				<li>Home</li>
-				<li>Sign In</li>
+				<li><a href="#login-box" class="login-window">Sign In</a></li>
 			</ul>
 		</div>
 		<h1>Goal Manager</h1>
 			<div class="entry">
-				<p>This is a test div to see how it looks like</p>
+				
 			</div>
-		
+			<div id="login-box" class="login-popup">
+			<a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+  			<form method="post" class="signin" action="#">
+        	<fieldset class="textbox">
+        	<label class="username">
+        	<span>Username or email</span>
+        	<input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username">
+        	</label>
+        	<label class="password">
+        	<span>Password</span>
+        	<input id="password" name="password" value="" type="password" placeholder="Password">
+        	</label>
+        	<button class="submit button" type="button">Sign in</button>
+        	<p>
+        	<a class="forgot" href="#">Forgot your password?</a>
+        	</p>        
+        	</fieldset>
+  </form>
+</div>
+
+
 	</body>
+	
 </html>
+
