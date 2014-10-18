@@ -1,0 +1,40 @@
+body {
+	background-color: #226666;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+	font-family: Droid Sans;
+	color: white;
+	text-align: center;
+	height: 100%;
+}
+
+html {
+	height: 100%;
+}
+
+h1 {
+	font-size: 70px;
+	
+}
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	display: inline;
+}
+.top_bar {
+	background-color: #669999;
+	height: 10%;
+	margin: 0px;
+}
+div.entry {
+	background-color: #d7e5ff;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	color: black;
+}
