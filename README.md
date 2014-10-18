@@ -21,5 +21,10 @@ http GET localhost:3000/user username=pete password=pw
 
 Update password to pw on uid 123
 ```shell
-http --form PUT localhost:3000/user/password id=123 new_password=pw
+http --form PUT localhost:3000/user/123/password new_password=pw
+```
+
+Delete account 123
+```shell
+http DELETE localhost:3000/user/123
 ```
