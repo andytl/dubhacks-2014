@@ -1,5 +1,5 @@
 $(function() {
-    $("#signinForm").submit(signIn);
+    $("#login_button")[0].addEventListener('click', signIn);
 
     function signIn() {
         var name = $("[name='username']").val();
