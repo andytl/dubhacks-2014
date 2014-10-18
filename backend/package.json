@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "express": "latest",
-    "lodash": "latest"
+    "lodash": "latest",
+    "sqlite3": "latest"
   },
   "author": "",
   "license": "ISC",
