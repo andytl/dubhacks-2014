@@ -25,6 +25,20 @@ app.post('/person', person.create);
 */
 app.get('/person/:id', person.lookup);
 
+/*
+
+*/
+app.get('/goal', goal.list);
+
+/*
+
+*/
+app.post('/goal', goal.create);
+
+/*
+
+*/
+app.get('/goal/:id', goal.lookup);
 
 
 app.listen(3000);
