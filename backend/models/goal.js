@@ -15,14 +15,14 @@ exports.create = function(req, res) {
 }
 
 exports.lookup = function(req, res) {
-  var query = "select * from goal where uid = " + req.params('uid') + " and id = " + req.params('id') ";";
+  var query = "select * from goal where uid = " + req.params('uid') + " and id = " + req.params('id') + ";";
  // res.send("you just looked up goal number " + req.param('id'));
  //db.search(query)
  res.send(query);
 }
 
 exports.list = function(req, res) {
-  var query = "select * from goal where uid = " + req.params('uid')";";
+  var query = "select * from goal where uid = " + req.params('uid') + ";";
   //res.send("here is a list of every goal");
 // db.search(query);
   res.send(query);

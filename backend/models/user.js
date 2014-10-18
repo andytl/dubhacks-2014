@@ -9,7 +9,7 @@ exports.create = function(req, res) {
   res.send("created a user");
 
   var query = "insert into user (username, password, phone) values (";
-  query += req.query.username + ", " + req.query.password + ", " + req.query.phone + ")";
+  body += req.body.username + ", " + req.body.password + ", " + req.body.phone + ")";
 
   console.log(query);
   //db.run(query);
