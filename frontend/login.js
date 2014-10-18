@@ -4,7 +4,7 @@ $(function() {
     function signIn() {
         var name = $("[name='username']").val();
         var pw = $("[name='password']").val();
-        var url = "localhost:3000/user/";
+        var url = "http://localhost:3000/user/";
         var data = '"username":' + "\""+name + "\"," + '"password":' + "\""+pw + "\"";
         var obj = jQuery.parseJSON("{" + data + "}");
         $.ajax({
@@ -27,9 +27,11 @@ $(function() {
     }
 
     function onSuccess(result) {
-        $.cookie("userID", result);
-        $.cookie("[name='username']").val();
-        alert("cookies are set!(yum!)");
+        var uid = result.uid;
+        document.cookie = "userId=" + uid;
+        var username = $("[name='username']").val();
+        document.cookie = "userName=" + username;
+        window.location.href = "http://localhost:3000/static/goal_list.html";
     }
 
 });

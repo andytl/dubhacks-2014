@@ -29,6 +29,7 @@ $(function() {
 
 	function onSuccess(result) {
 		alert("success!");
+		window.location.href = "http://localhost:3000/static";
 	}
 
 });
