@@ -1,40 +1,12 @@
-# Eclipse gitignore
-*.pydevproject
-.metadata
-.gradle
-bin/
-tmp/
-*.tmp
-*.bak
+### General stuff
 *.swp
-*~.nib
-local.properties
-.settings/
-.loadpath
-# External tool builders
-.externalToolBuilders/
-# Locally stored "Eclipse launch configurations"
-*.launch
-# CDT-specific
-.cproject
-# PDT-specific
-.buildpath
-# sbteclipse plugin
-.target
-# TeXlipse plugin
-.texlipse
 
 
+# The database that will store all of our data, SQLite for now.
+database
 
-*.class
+### Backend stuff
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# NPM dependencies
+node_modules/
 
-# Package Files #
-*.jar
-*.war
-*.ear
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*

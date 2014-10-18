@@ -1,0 +1,21 @@
+{
+  "name": "dubhacks-2014",
+  "version": "0.0.0",
+  "description": "dubhacks 2014 - Motivation app backend",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ".git"
+  },
+  "dependencies": {
+    "express": "latest",
+    "lodash": "latest",
+    "sqlite3": "latest"
+  },
+  "author": "",
+  "license": "ISC",
+  "private":true
+}
