@@ -4,7 +4,7 @@ $(function() {
     function signIn() {
         var name = $("[name='username']").val();
         var pw = $("[name='password']").val();
-        var url = "localhost:3000/user/";
+        var url = "http://localhost:3000/user/";
         var data = '"username":' + "\""+name + "\"," + '"password":' + "\""+pw + "\"";
         var obj = jQuery.parseJSON("{" + data + "}");
         $.ajax({
