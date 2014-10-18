@@ -19,6 +19,8 @@ app.get("/", function(req, res) {
 // User endpoints
 app.get('/user/:id', user.lookup);
 
+app.get('/user', user.login);
+
 app.post('/user', user.create);
 
 app.put('/user/password', user.updatePassword);

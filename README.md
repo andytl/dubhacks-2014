@@ -6,3 +6,20 @@ To create a new database in SQLite that can store data for this application, run
 ```shell
 sqlite3 db < pavedb.sql
 ```
+
+To run various commands from httpie on the terminal:
+
+Create new account with username pete, password pw, and phone 123456
+```shell
+http --form POST localhost:3000/user username=pete password=pw phone=123456
+```
+
+Login to an account with username pete, password pw
+```shell
+http GET localhost:3000/user username=pete password=pw
+```
+
+Update password to pw on uid 123
+```shell
+http --form PUT localhost:3000/user/password id=123 new_password=pw
+```
