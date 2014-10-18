@@ -14,6 +14,8 @@ var user = require('./models/user.js');
 var goal = require('./models/goal.js');
 var subgoal = require('./models/subgoal.js');
 
+app.use("/static", express.static("../frontend"));
+
 
 app.get("/", function(req, res) {
   res.send("welcome to the webapp");
