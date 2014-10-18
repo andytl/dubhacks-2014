@@ -28,3 +28,29 @@ Delete account 123
 ```shell
 http DELETE localhost:3000/user/123
 ```
+
+
+Create new goal for user 123 with text 'This is my goal'
+```shell
+http --form POST localhost:3000/user/123/goal text='This is my goal'
+```
+
+Lookup single goal for user 16, goal 7
+```shell
+http GET localhost:3000/user/16/goal/7
+```
+
+Lookup all goals for user 16
+```shell
+http GET localhost:3000/user/16/goal
+```
+
+Delete goal 7 for user 16
+```shell
+http DELETE localhost:3000/user/16/goal/7
+```
+
+Update goal 6 for user 16
+```shell
+http --form PUT localhost:3000/user/16/goal/6 new_text='This is my new goal text'
+```

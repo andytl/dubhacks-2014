@@ -26,15 +26,15 @@ app.put('/user/:id/password', user.updatePassword);
 app.delete('/user/:id', user.remove);
 
 // Goal endpoints
-app.get('/goal', goal.list);
+app.get('/user/:uid/goal', goal.list);
 
-app.get('/goal/:id', goal.lookup);
+app.get('/user/:uid/goal/:id', goal.lookup);
 
-app.post('/goal', goal.create);
+app.post('/user/:uid/goal', goal.create);
 
-app.put('/goal/:id', goal.update);
+app.put('/user/:uid/goal/:id', goal.update);
 
-app.delete('/goal/:id', goal.remove);
+app.delete('/user/:uid/goal/:id', goal.remove);
 
 // Subgoal endpoints
 app.get('/subgoal', subgoal.list);
