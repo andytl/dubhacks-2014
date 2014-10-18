@@ -3,7 +3,7 @@
 
 
 # The database that will store all of our data, SQLite for now.
-database
+db
 
 ### Backend stuff
 
