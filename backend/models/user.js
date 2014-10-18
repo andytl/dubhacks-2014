@@ -2,22 +2,17 @@
 var db = require('./database.js');
 
 
-var user = {
-  'name': 'user',
-  'fields': [
-    'id',
-    'username',
-    'password',
-    'phone'
-  ]
+exports.updatePassword = function(req, res) {
+
 }
-
-
-
 exports.create = function(req, res) {
   res.send("created a user");
 
-  db.create(user, req.params);
+  var query = "insert into user (username, password, phone) values (";
+  query += req.query.username + ", " + req.query.password + ", " + req.query.phone + ")";
+
+  console.log(query);
+  //db.run(query);
 
 }
 

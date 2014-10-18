@@ -1,9 +1,12 @@
+
 // Load the server
 var express = require('express');
 var app = express();
 
 // Load the models
 var user = require('./models/user.js');
+var goal = require('./models/goal.js');
+var subgoal = require('./models/subgoal.js');
 
 
 app.get("/", function(req, res) {
@@ -46,3 +49,7 @@ app.delete('/goal/:gid/subgoal/:id', subgoal.remove);
 
 app.listen(3000);
 
+
+
+// Debugger catchpoint
+debugger;

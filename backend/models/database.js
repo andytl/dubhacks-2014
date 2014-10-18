@@ -1,8 +1,13 @@
 
 var config = require('../config.js');
 
-var sql = require('sqlite3').verbose();
+var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database(config.DB_URL);
+
+exports = db; // no time for fancy db, use this
+
+
+
 
 function collapse(n1, n2) {
   return n1 + ', ' + n2;
@@ -10,6 +15,11 @@ function collapse(n1, n2) {
 
 exports.manualQuery = function(sql) {
 }
+
+
+
+
+
 
 // Inserts one value into db
 exports.create = function(table, params) {
@@ -20,7 +30,7 @@ exports.create = function(table, params) {
 
   query += table.fields.map(function (n) {
     return params(n);
-  }.reduce(collapse);
+  }).reduce(collapse);
 
   query += ')';
 

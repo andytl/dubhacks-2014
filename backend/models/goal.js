@@ -1,6 +1,10 @@
 
+exports.update = function(req, res) {
+  
+}
+exports.remove = function(req, res) {
 
-
+}
 exports.create = function(req, res) {
   res.send("created a goal");
 }
