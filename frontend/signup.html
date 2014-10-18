@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Goal Manager</title>
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Droid+Sans">
+		<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<script type="text/javascript" src="signup.js"></script>
+		<link rel="stylesheet" type="text/css" href="goal_manager.css">
+		
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default" role="navigation">
+		  <div class="container-fluid">
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><a href="index.html">Home</a></li>	
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+		<h1>Goal Manager</h1>
+			<div class="wrapper">
+			    <form class="form-signin" onsubmit="createUser()" id="signupform">       
+			      <h2 class="form-signin-heading">Enter Signup Info</h2>
+			      <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
+			      <input type="password" class="form-control" name="password" placeholder="Password" required=""/> 
+			      <input type="text" class="form-control" name="phone_number" placeholder="Phone Number" required="" autofocus="" />     
+			      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+			    </form>
+			 </div>
+
+	</body>
+	
+</html>
+
