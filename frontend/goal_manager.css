@@ -21,14 +21,16 @@ ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+	font-size: 30px;
+	text-align: right;
 }
 
 li {
+	padding-left: 10px;
 	display: inline;
 }
 .top_bar {
 	background-color: #669999;
-	height: 10%;
 	margin: 0px;
 }
 div.entry {
