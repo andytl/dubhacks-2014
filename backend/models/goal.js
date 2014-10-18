@@ -7,10 +7,10 @@ exports.create = function(req, res) {
       var insertGoal = "insert into goal (uid, text) values (" + req.params.uid + ", '" + req.body.text + "');";
       db.run(insertGoal, function() {
         var lastId = this.lastID;
-        res.send("inserted goal with id = " + lastId);
+        res.json({gid: lastId});
       });
     } else {
-      res.send("user doesn't exist");
+      res.json({status: 404, message: "user doesn't exist"});
     }
   });
 }
@@ -18,10 +18,10 @@ exports.create = function(req, res) {
 exports.lookup = function(req, res) {
   var getGoal = "select * from goal where id = '" + req.params.id + "' and uid = '" + req.params.uid + "';";
   db.each(getGoal, function(err, row) {
-    res.send("row = " + JSON.stringify(row));
+    res.json({row: JSON.stringify(row)});
   }, function(err, rows) {
     if (rows == 0) {
-      res.send("goal doesn't exist");
+      res.json({status: 404, message: "goal doesn't exist"});
     }
   });
 }
@@ -33,9 +33,9 @@ exports.list = function(req, res) {
     returnedData.push(row);
   }, function(err, rows) {
     if (rows == 0) {
-      res.send("goal doesn't exist");
+      res.json({status: 404, message: "goal doesn't exist"});
     } else {
-      res.send("rows = " + JSON.stringify(returnedData))
+      res.json({rows: JSON.stringify(returnedData)});
     }
   });
 }
@@ -47,9 +47,9 @@ exports.update = function(req, res) {
   db.get(checkIfExists, function(err, row) {
     if (row.num > 0) {
       db.run(updateText);
-      res.send("text updated");
+      res.json({status: 200, message:"text updated"});
     } else {
-      res.send("goal doesn't exist");
+      res.json({status: 404, message: "goal doesn't exist"});
     }
   });
 }
@@ -61,9 +61,9 @@ exports.remove = function(req, res) {
   db.get(checkIfExists, function(err, row) {
     if (row.num > 0) {
       db.run(deleteGoal);
-      res.send("goal deleted");
+      res.json({status: 204, message: "goal deleted"});
     } else {
-      res.send("goal doesn't exist");
+      res.json({status: 404, message: "goal doesn't exist"});
     }
   });
 }
